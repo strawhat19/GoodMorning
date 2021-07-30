@@ -27,10 +27,11 @@ header {
   background: white;
   border: solid 2px black;
   margin-bottom: 35px;
+  align-items: center;
 }
 
 header h1 {
-  font-size: 1.8em !important;
+  font-size: 2.5em !important;
 }
 
 .projectDescription {
@@ -38,6 +39,22 @@ header h1 {
   padding: 1em;
   border: solid 2px black;
   margin: 35px 0;
+}
+
+.projectTasks {
+  display: flex;
+  flex-direction: column;
+}
+
+.tasksList {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: auto;
+}
+
+.task {
+  width: 50%;
+  height: 50px;
 }
 
   .cup {
@@ -62,11 +79,13 @@ header h1 {
     width: 100%;
 }
   
-  .newsColumn {
-    display: flex;
-    height: 50%;
-    padding: 1em;
-    align-content: center;
-    align-items: center;
-    border: 1px solid black;
+.newsColumn {
+  display: flex;
+  height: 50%;
+  padding: 1em;
+  align-content: center;
+  align-items: center;
+  border: 1px solid black;
+  text-align: center;
+  height: 10em;
 }
