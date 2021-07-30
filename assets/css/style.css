@@ -1,23 +1,66 @@
+/* Importing Google Fonts */
+/* Montserrat */
+/* MonteCarlo */
+/* Style Script */
+@import url('https://fonts.googleapis.com/css2?family=MonteCarlo&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Style+Script&display=swap');
+
+
+
 body {
-    background: gray;
-    display: flex;
-    height: 100vh;
-    width: 95%;
-    justify-content: center;
-    align-items: center;
-  }
+  background: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat';
+}
+
+p {
+  font-family: 'Montserrat';
+}
+
+header {
+  font-family: 'MonteCarlo', cursive;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1em;
+  background: white;
+  border: solid 2px black;
+  margin-bottom: 35px;
+}
+
+header h1 {
+  font-size: 1.8em !important;
+}
+
+.projectDescription {
+  background: white;
+  padding: 1em;
+  border: solid 2px black;
+  margin: 35px 0;
+}
+
+  .cup {
+    width: 15%;
+}
   
   .newsContainer {
+    padding: 1em;
     background: white;
-    height: 75%;
-    width: 75%;
     border: solid 2px black;
     display: flex;
-  /*    flex-direction: column; */
+     flex-direction: column;
     justify-content: flex-start;
     justify-items: center;
     align-items: center;
   }
+
+
+  .newsRow {
+    display: flex;
+    margin: 1em 0;
+    width: 100%;
+}
   
   .newsColumn {
     display: flex;
@@ -25,4 +68,5 @@ body {
     padding: 1em;
     align-content: center;
     align-items: center;
-  }
+    border: 1px solid black;
+}
