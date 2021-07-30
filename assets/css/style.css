@@ -4,7 +4,13 @@
 /* Style Script */
 @import url('https://fonts.googleapis.com/css2?family=MonteCarlo&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Style+Script&display=swap');
 
+* {
+  box-sizing: border-box;
+}
 
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   background: gray;
@@ -13,7 +19,16 @@ body {
   justify-content: center;
   align-items: center;
   font-family: 'Montserrat';
-  scroll-behavior: smooth !important;
+  padding: 0 5em;
+}
+
+a {
+  background: white;
+  border: solid 2px black;
+  text-align: center;
+  color: black;
+  text-decoration: none;
+  padding: 2em;
 }
 
 p {
@@ -29,6 +44,7 @@ header {
   border: solid 2px black;
   margin-bottom: 35px;
   align-items: center;
+  width: 100%;
 }
 
 header h1 {
@@ -39,7 +55,22 @@ header h1 {
   background: white;
   padding: 1em;
   border: solid 2px black;
-  margin: 35px 0;
+  margin: 15px 0;
+  width: 100%;
+}
+
+.tasksLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.projectIntro {
+  display: flex;
+  grid-gap: 40px;
+  margin-top: 15px;
 }
 
 .projectTasks {
@@ -58,11 +89,20 @@ header h1 {
   height: 50px;
 }
 
+.tasksButton {
+  width: 100%;
+  height: 2em;
+  font-weight: 800;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
   .cup {
     width: 15%;
 }
   
   .newsContainer {
+    margin: 1em 0;
     padding: 1em;
     background: white;
     border: solid 2px black;
@@ -71,6 +111,7 @@ header h1 {
     justify-content: flex-start;
     justify-items: center;
     align-items: center;
+    width: 100%;
   }
 
 
@@ -82,11 +123,11 @@ header h1 {
   
 .newsColumn {
   display: flex;
-  height: 50%;
   padding: 1em;
   align-content: center;
   align-items: center;
   border: 1px solid black;
   text-align: center;
   height: 10em;
+  width: 100%;
 }
