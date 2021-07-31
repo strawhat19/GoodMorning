@@ -5,3 +5,4 @@ console.log('GoodMorning App!');
 var colorBoxes = document.querySelectorAll('.color');
 var colorCodes = document.querySelectorAll('.colorCode');
 colorCodes.innerHTML = colorBoxes.style.background;
+console.log("test")
