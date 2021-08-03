@@ -2,7 +2,7 @@
 A News App
 
 ## GoodMorning App
-![This is the GoodMorning App.](./assets/css/images/GoodMorning-Cup.jpg)
+![This is the GoodMorning App.](./assets/css/images/GoodMorning-Logo.png)
 
 ## User Story
 
