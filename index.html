@@ -20,9 +20,14 @@
   <header class="GoodMorning">
     <h1>GoodMorning <i class="fas fa-mug-hot"></i></h1>
     <img class="cup" src="./assets/css/images/GoodMorning-Cup.jpg">
+    <div class="search">
+      <!-- placeholder embeds text in search bar! -->
+      <input type="text" class="search-bar" placeholder="search">
+      <button>Submit</button>
+    </div>  
   </header>
   
-  <div class="projectRequirements">
+  <!-- <div class="projectRequirements">
     <a class="tasksLink tasksButton" href="#projectTasks">Jump to Tasks</a>
     <div class="projectIntro">
       <div class="projectDescription"><h1 class="userStoryText">User Story</h1>As a user, I would like to view all the important headlines of the day in the morning while drinking Coffee / Eating Breakfast. I would like to have one location where I can view news/entertainment from the best sources all on one dashboard.</div>
@@ -40,7 +45,7 @@
       <li class="task">Mobile Responsiveness - Ricky // Cam</li>
       <li class="task">Feature: User can move News Columns around to their preference</li>
     </ul>
-  </div>
+  </div> -->
   
   <div class="newsContainer">
 
@@ -48,18 +53,18 @@
 
       <div class="appContent">
 
-      <div class="newsRow">
-        <div class="newsColumn">Tops 3 Articles from CNN</div>
-        <div class="newsColumn">Tops 3 Articles from Reddit</div>
-        <div class="newsColumn">Tops 3 Articles from ABC</div>
-        <div class="newsColumn">Tops 3 Articles from ESPN</div>
+      <div id= news-row class="newsRow">
+        <div id="c-nn" class="cnn">Tops 3 Articles from CNN</div>
+        <div id="r-eddit" class="reddit">Tops 3 Articles from Reddit</div>
+        <div id="a-bc" class="abc">Tops 3 Articles from ABC</div>
+        <div id="e-spn" class="espn">Tops 3 Articles from ESPN</div>
       </div>
 
         <div class="newsRow">
-          <div class="newsColumn">Tops 3 Articles from CSPAN</div>
-          <div class="newsColumn">Tops 3 Articles from News.com</div>
-          <div class="newsColumn">Tops 3 Articles from CBS.com</div>
-          <div class="newsColumn">Tops 3 Videos from Youtube.com</div>
+          <div id="c-span" class="cspan">Tops 3 Articles from CSPAN</div>
+          <div id="n-ews" class="news">Tops 3 Articles from News.com</div>
+          <div id="c-bs" class="cbs">Tops 3 Articles from CBS.com</div>
+          <div id="y-outube" class="youtube">Tops 3 Videos from Youtube.com</div>
         </div>
 
       </div>
