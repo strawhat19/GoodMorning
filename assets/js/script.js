@@ -20,3 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
     $('.sidenav').sidenav();
   });
   //hi
+  var cnn = document.querySelector('#cnn');
+  var reddit = document.querySelector('#reddit');
+   
