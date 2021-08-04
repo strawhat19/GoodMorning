@@ -1,2 +1,19 @@
 /* App CSS */
 
+.newsRow {
+    display: flex;
+    width: 100%;
+    grid-gap: 45px;
+  }
+
+  .newsColumn {
+    background: var(--snow);
+    display: flex;
+    padding: 1em;
+    align-content: center;
+    align-items: center;
+    border: 1px solid black;
+    text-align: center;
+    height: 10em;
+    width: 100%;
+  }
