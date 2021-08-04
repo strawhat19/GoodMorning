@@ -22,4 +22,3 @@ document.addEventListener('DOMContentLoaded', function() {
   //hi
   var cnn = document.querySelector('#cnn');
   var reddit = document.querySelector('#reddit');
-   
