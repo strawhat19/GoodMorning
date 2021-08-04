@@ -1,19 +1,40 @@
 /* App CSS */
 
-.newsRow {
-    display: flex;
-    width: 100%;
-    grid-gap: 45px;
-  }
+header {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1em;
+  background: white;
+  border: solid 2px black;
+  margin-bottom: 35px;
+  align-items: center;
+  margin-top: 1.5em;
+  width: 100%;
+  height: 8em;
+}
 
-  .newsColumn {
-    background: var(--snow);
+.newsColumn {
+  background: var(--snow);
+  display: flex;
+  padding: 1em;
+  align-content: center;
+  align-items: center;
+  /* border: 1px solid black; */
+  text-align: center;
+  height: 10em;
+  width: 100%;
+}
+
+.appContent {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 2em;
+  border: solid 1px #000; 
+   background: var(--snow); 
+}
+
+.categorySection {
     display: flex;
-    padding: 1em;
-    align-content: center;
-    align-items: center;
-    border: 1px solid black;
-    text-align: center;
-    height: 10em;
-    width: 100%;
-  }
+    justify-content: center;
+}
