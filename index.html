@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
     <!-- Importing Tailwind CSS
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="./assets/css/app.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
@@ -115,7 +116,9 @@
       <div class="appContent">
 
       <div class="newsRow">
-        <div class="newsColumn cnn">Tops 3 Articles from CNN</div>
+        <div class="newsColumn cnn">
+          <div class="columnTitle">Articles from CNN <i class="fab fa-reddit"></i></div>
+        </div>
         <div class="newsColumn reddit">
           <div class="columnTitle">Best Memes from Reddit <i class="fab fa-reddit"></i></div>
         </div>
@@ -125,7 +128,8 @@
 
         <div class="newsRow">
           <div class="newsColumn cspan">Tops 3 Articles from CSPAN</div>
-          <div class="newsColumn news">Tops 3 Articles from <img src="./assets/css/images/newsAPI-1.png" alt="" class="newsImage"></div>
+          <div class="newsColumn news">
+            <div class="columnTitle">Top Articles from <img src="./assets/css/images/newsAPI-1.png" alt="" class="newsImage"></div></div>
           <div class="newsColumn cbs">Tops 3 Articles from CBS.com</div>
           <div class="newsColumn youtube">Tops 3 Videos from Youtube.com</div>
         </div>
