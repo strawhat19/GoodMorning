@@ -293,3 +293,22 @@ nav ul a {
 .redditMeme {
   border-radius: 20px;
 }
+
+/* News */
+
+.news {
+  background: #125ab8;
+  color: #fff;
+  text-align: left;
+}
+
+.bg-na-blue {
+  background-image: initial;
+  background-color: rgb(18, 90, 184);
+  color: #fff;
+  font-family: 'NA Sans';
+}
+
+.na-blue {
+  color: rgb(48, 146, 234);
+}
