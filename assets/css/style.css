@@ -336,3 +336,31 @@ footer {
 .na-blue {
   color: rgb(48, 146, 234);
 }
+
+.cbs{
+  background: var(--cbs);
+}
+
+.youtube{
+  background: white;
+  color:var(--richblack);
+}
+
+.cnn{
+  background: var(--cnnGrey);
+  color: #FFFBFF;
+}
+
+.abc{
+  background: var(--abcBlack);
+  color: var(--abdWhite);
+}
+
+.espn{
+  background: var(--espnRed)
+}
+
+.cspan{
+  background: var(--cspan);
+  color:#FFFBFF;
+}
