@@ -297,3 +297,26 @@ nav ul a {
 .redditMeme {
   border-radius: 20px;
 }
+
+footer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: row;
+  padding: 0!important;
+  height: 5em;
+}
+.goodmorning-footer{
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-cup {
+  width: 4em;
+}
+
+/* .footer-cup cuo{
+  flex-direction: row;
+} */
