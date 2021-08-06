@@ -306,6 +306,7 @@ footer {
   padding: 0!important;
   height: 5em;
 }
+
 .goodmorning-footer{
   display: flex;
   width: 90%;
@@ -317,6 +318,21 @@ footer {
   width: 4em;
 }
 
-/* .footer-cup cuo{
-  flex-direction: row;
-} */
+/* News */
+
+.news {
+  background: #125ab8;
+  color: #fff;
+  text-align: left;
+}
+
+.bg-na-blue {
+  background-image: initial;
+  background-color: rgb(18, 90, 184);
+  color: #fff;
+  font-family: 'NA Sans';
+}
+
+.na-blue {
+  color: rgb(48, 146, 234);
+}
