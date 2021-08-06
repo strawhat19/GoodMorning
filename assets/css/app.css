@@ -38,3 +38,95 @@ header {
       display: flex;
       justify-content: center;
   }
+
+  :root {
+    --richblack: #000500;
+    --bluencs: #0094C6;
+    --bluesapphire: #005E7C;
+    --bisque: #F1DABF;
+    --snow: #FFFBFF;
+  
+    --redditDark: #1a1a1b;
+    --redditMain: #ff4500;
+
+    --cnnRed: #B80C09;
+    --cnnRichBlack: #0A0A0B;
+    --cnnGrey: #3D3D3D;
+
+    --abcBlack: #0A0A0B;
+    --abdWhite: #ffff;
+
+    --espnRed: #F41915;
+
+    --cspan: #003B7A;
+
+    --cbs: #4e4e4e;
+  }
+
+  .columnTitle {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+  }
+  .reddit {
+    background: var(--redditDark);
+    color: white;
+  }
+  
+  .reddit i {
+    color: var(--redditMain);
+    position: relative;
+    background: white;
+    border-radius: 100px;
+    font-size: 1.5em;
+    max-height: 1em;
+  }
+  
+  .redditMemeElement {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1em;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1em 1.5em;
+    text-align: left;
+    font-weight: 600;
+    font-size: .85em;
+  }
+  
+  .redditMeme {
+    border-radius: 20px;
+  }
+
+  .cnn{
+    background: var(--cnnGrey);
+    color: #FFFBFF;
+  }
+
+  .abc{
+    background: var(--abcBlack);
+    color: var(--abdWhite);
+  }
+
+  .espn{
+    background: var(--espnRed)
+  }
+
+  .cspan{
+    background: var(--cspan);
+    color:#FFFBFF;
+  }
+
+  .news{
+    background: var(--cspan);
+    color: white;
+  }
+
+  .cbs{
+    background: var(--cbs);
+  }
+
+  .youtube{
+    background: white;
+    color:var(--richblack);
+  }
