@@ -36,6 +36,7 @@ body {
 
   --redditDark: #1a1a1b;
   --redditMain: #ff4500;
+  --newsapi: #125ab8;
 }
 
 h1 {
@@ -43,11 +44,12 @@ h1 {
 }
 
 a {
-  background: white;
-  text-align: center;
-  color: black;
+  background: none;
+  text-align: left;
+  color: white;
   text-decoration: none;
-  padding: 2em;
+  padding: 0em;
+  transition: 150ms ease-in-out;
 }
 
 p {
@@ -173,7 +175,7 @@ h1 {
   background: var(--snow);
   display: flex;
   flex-direction: column;
-  padding: 1em;
+  padding: 0em 1em 1em 1em;
   align-content: center;
   align-items: center;
   border: 1px solid black;
@@ -227,7 +229,6 @@ h1 {
 .color5 {
   background: var(--snow);
 }
-
 
 /* Materialize Navbar Overwrite */
 .goodmorningNav {
@@ -286,15 +287,60 @@ nav ul a {
 
 /* News Columns */
 
+.element {
+  width: 100%;
+}
+
+.element img {
+  border-radius: 20px;
+}
+
 .columnTitle {
   display: flex;
   justify-content: space-between;
-  width: 90%;
+  width: 100%;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  padding: 1em;
+  backdrop-filter: blur(2px);
+  margin-bottom: -1.5em;
+}
+
+.titleRow {
+  display: flex;
+  grid-gap: .5em;
+  align-items: flex-start;
+}
+
+.byLine {
+  font-size: .7em;
+  padding-left: 2em;
+}
+
+.authorLink {
+  padding-left: .2em;
 }
 
 .reddit {
   background: var(--redditDark);
   color: white;
+}
+
+.reddit .columnTitle {
+  background: rgb(0 0 0 / 50%);
+}
+
+.reddit .elementLink {
+  color: var(--redditMain);
+}
+
+.reddit .elementLink:hover {
+  color: #ffffff;
+}
+
+.news .columnTitle {
+  background: var(--newsapi);
 }
 
 .reddit i {
@@ -316,10 +362,6 @@ nav ul a {
   text-align: left;
   font-weight: 600;
   font-size: .85em;
-}
-
-.redditMeme {
-  border-radius: 20px;
 }
 
 footer {
@@ -346,10 +388,58 @@ footer {
 /* News */
 
 .news {
-  background: #125ab8;
+  background: var(--newsapi);
   color: #fff;
   text-align: left;
 }
+
+.news .columnTitle {
+  background: var(--newsapi);
+}
+
+.newsImage {
+  width: 27%;
+}
+
+.newsElement {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 1em;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1em 1.5em;
+  text-align: left;
+  font-weight: 600;
+  font-size: .85em;
+  width: 100%;
+}
+
+.notFound {
+  font-size: .6em;
+}
+
+.reddit i {
+  color: var(--redditMain);
+  position: relative;
+  background: white;
+  border-radius: 100px;
+  font-size: 1.5em;
+  max-height: 1em;
+}
+
+.redditMemeElement {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 1em;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1em 1.5em;
+  text-align: left;
+  font-weight: 600;
+  font-size: .85em;
+}
+
+/* Footer */
 
 .bg-na-blue {
   background-image: initial;
