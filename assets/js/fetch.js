@@ -1,3 +1,6 @@
+// Variables
+var newsColumns = $('.newsColumn');
+
 // Fetch Script Code
 
 var redditKey = 'NWALDmX-ufQV53BKp0JLVw';
@@ -22,11 +25,21 @@ fetch(newsRequestURL)
         var articleSource = data.articles[i].source.name;
         var articleLink = data.articles[i].url;
         var articleImage = data.articles[i].urlToImage;
+        if (articleImage === null) articleImage = '';
         var articleContent = data.articles[i].content;
         var articleElement = $(`
         <div class="newsElement">${i+1 + '. '}${articleTitle}<img class="articleImage" src="${articleImage}"></div>
-        `);
+        `); // Had to do this next function in Vanilla JS
         news.append(articleElement);
+        if (data.articles[i].urlToImage === null) {
+            var newsElements = document.querySelectorAll('.newsElement');
+            console.log(newsElements[i].childNodes[1]);
+            newsElements[i].childNodes[1].style.display = 'none';
+            var notFound = document.createElement('div');
+            notFound.setAttribute('class','notFound');
+            notFound.innerHTML = 'Image Not Found';
+            newsElements[i].append(notFound);
+         }
     }
 })
 

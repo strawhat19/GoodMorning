@@ -36,6 +36,7 @@ body {
 
   --redditDark: #1a1a1b;
   --redditMain: #ff4500;
+  --newsapi: #125ab8;
 }
 
 h1 {
@@ -173,7 +174,7 @@ h1 {
   background: var(--snow);
   display: flex;
   flex-direction: column;
-  padding: 1em;
+  padding: 0em 1em 1em 1em;
   align-content: center;
   align-items: center;
   border: 1px solid black;
@@ -228,7 +229,6 @@ h1 {
   background: var(--snow);
 }
 
-
 /* Materialize Navbar Overwrite */
 .goodmorningNav {
   display: flex;
@@ -265,12 +265,25 @@ nav ul a {
 .columnTitle {
   display: flex;
   justify-content: space-between;
-  width: 90%;
+  width: 100%;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  padding: 1em;
+  backdrop-filter: blur(2px);
 }
 
 .reddit {
   background: var(--redditDark);
   color: white;
+}
+
+.reddit .columnTitle {
+  background: rgb(0 0 0 / 50%);
+}
+
+.news .columnTitle {
+  background: var(--newsapi);
 }
 
 .reddit i {
@@ -321,10 +334,58 @@ footer {
 /* News */
 
 .news {
-  background: #125ab8;
+  background: var(--newsapi);
   color: #fff;
   text-align: left;
 }
+
+.news .columnTitle {
+  background: var(--newsapi);
+}
+
+.newsImage {
+  width: 27%;
+}
+
+.newsElement {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 1em;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1em 1.5em;
+  text-align: left;
+  font-weight: 600;
+  font-size: .85em;
+  width: 100%;
+}
+
+.notFound {
+  font-size: .6em;
+}
+
+.reddit i {
+  color: var(--redditMain);
+  position: relative;
+  background: white;
+  border-radius: 100px;
+  font-size: 1.5em;
+  max-height: 1em;
+}
+
+.redditMemeElement {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 1em;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1em 1.5em;
+  text-align: left;
+  font-weight: 600;
+  font-size: .85em;
+}
+
+/* Footer */
 
 .bg-na-blue {
   background-image: initial;
