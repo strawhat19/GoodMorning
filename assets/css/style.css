@@ -56,10 +56,10 @@ p {
 
 header {
   display: flex;
-  justify-content: space-evenly;
-  padding: 1em;
+  justify-content: center;
+  padding: 1em 0em;
   background: white;
-  /* border: solid 2px black; */
+  border: none;
   margin-bottom: 35px;
   align-items: center;
   margin-top: 0;
@@ -68,7 +68,7 @@ header {
 }
 
 nav.navbar {
-  width: 90%;
+  width: 100%;
 }
 
 header h1 {
@@ -144,7 +144,7 @@ h1 {
   margin: 1em 0;
   padding: 2em;
   background: white;
-  border: solid 2px black;
+  border: none;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -247,6 +247,30 @@ nav .brand-logo {
   border: none;
 }
 
+i.fas.fa-home {
+  padding: .2em;
+}
+i.fas.fa-address-card {
+  padding: .4em;
+}
+
+.goodmorning-menu {
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  min-width: 13em;
+}
+.navbar-start {
+  margin: 0;
+  justify-content: center;
+}
+
+.navbar-end {
+  margin: 0;
+  justify-content: flex-start;
+}
+
 nav ul a {
   -webkit-transition: background-color .3s;
   transition: background-color .3s;
@@ -307,10 +331,11 @@ footer {
   height: 5em;
 }
 
-.goodmorning-footer{
+.goodmorning-footer {
   display: flex;
   width: 90%;
-  justify-content: space-between;
+  justify-content: center;
+  grid-gap: 1em;
   align-items: center;
 }
 
@@ -363,4 +388,10 @@ footer {
 .cspan{
   background: var(--cspan);
   color:#FFFBFF;
+}
+
+/* category section styling */
+.categorySection {
+  display: flex;
+  justify-content: center;
 }
