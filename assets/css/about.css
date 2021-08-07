@@ -1,0 +1,45 @@
+.AboutMeContainer {
+    background-color: white;
+    justify-content: space-between;
+    display:grid;
+    
+}
+
+h1 {
+    font-size: 30px;
+    
+}
+
+.images {
+    display: flex;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.nameImageHeader {
+    display: flex;
+    
+}
+.firstBioRow,
+.secondBioRow {
+    display: flex;
+    flex-direction: row;
+    grid-gap:1em;
+    margin-bottom: 10px;
+   
+}
+.Ricky,
+.Alexander,
+.Yishay,
+.Rebekah {
+    border: solid black 2px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    grid-gap:1em;
+    padding:auto;
+    justify-content: space-between;
+    display:grid;
+}
+
