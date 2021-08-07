@@ -247,11 +247,11 @@ nav .brand-logo {
   border: none;
 }
 
-.fas fa-home{
-
+i.fas.fa-home {
+  padding: .2em;
 }
-.fas fa-address-card{
-
+i.fas.fa-address-card {
+  padding: .5em;
 }
 
 .goodmorning-menu {
