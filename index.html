@@ -21,29 +21,30 @@
 <body>
   <header class="GoodMorning">
     <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="https://bulma.io">
-          <img class="cup" src="./assets/css/images/GoodMorning-Logo.png">
-        </a>
+      
     
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-    
-      <div id="navbarBasicExample" class="navbar-menu">
+      <div id="navbarBasicExample" class="navbar-menu goodmorning-menu">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="#">
+            <img class="cup" src="./assets/css/images/GoodMorning-Logo.png">
+          </a>
+      
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
         <div class="navbar-start">
           <a class="navbar-item">
-            Home
+            <i class="fas fa-home"></i>Home
           </a>
     
           <a class="navbar-item">
-            Documentation
+            <i class="fas fa-address-card"></i>About
           </a>
     
-          <div class="navbar-item has-dropdown is-hoverable">
+          <!-- <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
               More
             </a>
@@ -63,17 +64,17 @@
                 Report an issue
               </a>
             </div>
-          </div>
+          </div> -->
         </div>
     
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
               <a class="button is-primary">
-                <strong>Sign up</strong>
+                <strong>Log In</strong>
               </a>
               <a class="button is-light">
-                Log in
+                Sign Up
               </a>
             </div>
           </div>
@@ -110,26 +111,33 @@
   </div> -->
   
   <div class="newsContainer">
-
-    <h1>Wireframe</h1>
-
+    <h1 class="categorySection">News</h1>
+      
       <div class="appContent">
 
       <div class="newsRow">
-        <div class="newsColumn cnn">
-          <div class="columnTitle">Articles from CNN <i class="fab fa-reddit"></i></div>
-        </div>
         <div class="newsColumn reddit">
           <div class="columnTitle">Best Memes from Reddit <i class="fab fa-reddit"></i></div>
         </div>
-        <div class="newsColumn abc">Tops 3 Articles from ABC</div>
-        <div class="newsColumn espn">Tops 3 Articles from ESPN</div>
+        <div class="newsColumn news">
+            <div class="columnTitle">Top Articles from <img src="./assets/css/images/newsAPI-1.png" alt="" class="newsImage"></div>
+          </div>
+        
+        <div class="newsColumn abc">
+          <div class="columnTitle">Top 3 Articles from ABC <i class="fab fa-reddit"></i></div>
+        </div>
+        <div class="newsColumn espn">Tops 3 Articles from ESPN
+          <div class="columnTitle">ESPN Articles <i class="fab fa-reddit"></i></div>
+        </div>
       </div>
-
+      <h1 class="categorySection">Entertainment</h1>
         <div class="newsRow">
-          <div class="newsColumn cspan">Tops 3 Articles from CSPAN</div>
-          <div class="newsColumn news">
-            <div class="columnTitle">Top Articles from <img src="./assets/css/images/newsAPI-1.png" alt="" class="newsImage"></div></div>
+          <div class="newsColumn cspan">
+            <div class="columnTitle">Top 3 Articles CSPAN <i class="fab fa-reddit"></i></div>
+        </div>
+        <div class="newsColumn cnn">
+          <div class="columnTitle">Articles from CNN <i class="fab fa-reddit"></i></div>
+        </div>
           <div class="newsColumn cbs">Tops 3 Articles from CBS.com</div>
           <div class="newsColumn youtube">Tops 3 Videos from Youtube.com</div>
         </div>
