@@ -44,11 +44,12 @@ h1 {
 }
 
 a {
-  background: white;
-  text-align: center;
-  color: black;
+  background: none;
+  text-align: left;
+  color: white;
   text-decoration: none;
-  padding: 2em;
+  padding: 0em;
+  transition: 150ms ease-in-out;
 }
 
 p {
@@ -262,6 +263,14 @@ nav ul a {
 
 /* News Columns */
 
+.element {
+  width: 100%;
+}
+
+.element img {
+  border-radius: 20px;
+}
+
 .columnTitle {
   display: flex;
   justify-content: space-between;
@@ -271,6 +280,22 @@ nav ul a {
   top: 0;
   padding: 1em;
   backdrop-filter: blur(2px);
+  margin-bottom: -1.5em;
+}
+
+.titleRow {
+  display: flex;
+  grid-gap: .5em;
+  align-items: flex-start;
+}
+
+.byLine {
+  font-size: .7em;
+  padding-left: 2em;
+}
+
+.authorLink {
+  padding-left: .2em;
 }
 
 .reddit {
@@ -280,6 +305,14 @@ nav ul a {
 
 .reddit .columnTitle {
   background: rgb(0 0 0 / 50%);
+}
+
+.reddit .elementLink {
+  color: var(--redditMain);
+}
+
+.reddit .elementLink:hover {
+  color: #ffffff;
 }
 
 .news .columnTitle {
@@ -305,10 +338,6 @@ nav ul a {
   text-align: left;
   font-weight: 600;
   font-size: .85em;
-}
-
-.redditMeme {
-  border-radius: 20px;
 }
 
 footer {
