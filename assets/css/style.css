@@ -38,6 +38,7 @@ body {
   --redditMain: #ff4500;
   --newsapi: #125ab8;
   --subnews: #77b3d4;
+  --youtube: #f41915;
 }
 
 h1 {
@@ -422,6 +423,22 @@ button:hover {
   color: var(--subnews) !important;
 }
 
+/* youtube videos */
+.youtube {
+  background: var(--youtube);
+  color: #fff;
+}
+
+.youtube i{
+  color: #fff;
+}
+
+iframe {
+  width: 100%;
+  min-height: 245px;
+  border-radius: 20px;
+}
+
 /* reddit memes */
 
 .reddit {
@@ -495,6 +512,8 @@ footer {
   font-size: .6em;
 }
 
+/* Reddit */
+
 .reddit i {
   color: var(--redditMain);
   position: relative;
@@ -533,11 +552,6 @@ footer {
   background: var(--cbs);
 }
 
-.youtube{
-  background: white;
-  color:var(--richblack);
-}
-
 .cnn{
   background: var(--cnnGrey);
   color: #FFFBFF;
@@ -561,4 +575,42 @@ footer {
 .categorySection {
   display: flex;
   justify-content: center;
+}
+
+
+/* Media Queries */
+@media screen and (max-width: 1470px) {
+    .newsRow {
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+
+  .newsColumn {
+    width: 47%;
+  }
+}
+
+@media screen and (max-width: 915px) {
+  .newsColumn {
+    width: 45%;
+  }
+
+  .columnTitle {
+    font-size: .9em;
+  }
+}
+
+@media screen and (max-width: 745px) and (min-width: 690px) {
+  .columnTitle {
+    font-size: .8em;
+  }
+}
+
+@media screen and (max-width: 676px) {
+  .newsColumn {
+    width: 100%;
+  }
+  .columnTitle {
+    font-size: 1em;
+  }
 }
