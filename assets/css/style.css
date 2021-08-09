@@ -37,6 +37,8 @@ body {
   --redditDark: #1a1a1b;
   --redditMain: #ff4500;
   --newsapi: #125ab8;
+  --subnews: #77b3d4;
+  --youtube: #f41915;
 }
 
 h1 {
@@ -288,11 +290,39 @@ nav ul a {
 /* News Columns */
 
 .element {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 1em;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1em 1.5em;
+  text-align: left;
+  font-weight: 600;
+  font-size: .85em;
   width: 100%;
 }
 
 .element img {
   border-radius: 20px;
+}
+
+button {
+  background: #000;
+  color: #fff;
+  font-weight: 600;
+  font-size: .85em;
+  width: 100%;
+  border: none;
+  padding: 1em;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 150ms ease-in-out;
+}
+
+button:hover {
+  background: transparent;
+  color: #fff;
+  box-shadow: 0 0 4px rgb(0 0 0 / 35%);
 }
 
 .columnTitle {
@@ -322,6 +352,95 @@ nav ul a {
   padding-left: .2em;
 }
 
+/* r/news */
+
+.subNews {
+  background: #fff;
+  color: #000;
+}
+
+.subNewsIndex {
+  background: url(./images/rslashnewslogo.png);
+  background-position: 50% 50%;
+  padding: 1em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: #000;
+  text-shadow: 0 0 4px #fff;
+}
+
+.subNews .elementLink {
+  color: var(--subnews);
+}
+
+.subNews .elementLink:hover {
+  color: #000;
+}
+
+.subNews .byLine {
+  padding-left: 6em;
+}
+
+.subNewsLogo {
+  max-width: 10%;
+}
+
+.subNewsSource {
+  background: var(--subnews);
+  color: #fff !important;
+  font-weight: 600;
+  font-size: .85em;
+  width: 100%;
+  border: none;
+  padding: 1em;
+  border-radius: 20px;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  border: 1px solid var(--subnews);
+  transition: 150ms ease-in-out;
+  justify-content: center;
+  grid-gap: .5em;
+  align-items: flex-start;
+}
+
+.subNewsSource:hover {
+  background: #fff;
+  color: var(--subnews) !important;
+}
+
+.external {
+  margin-top: 0.1em;
+}
+
+.subNews button {
+  background: var(--subnews);
+  color: #fff !important;
+}
+
+.subNews button:hover {
+  background: #fff;
+  color: var(--subnews) !important;
+}
+
+/* youtube videos */
+.youtube {
+  background: var(--youtube);
+  color: #fff;
+}
+
+.youtube i{
+  color: #fff;
+}
+
+iframe {
+  width: 100%;
+  min-height: 245px;
+  border-radius: 20px;
+}
+
+/* reddit memes */
+
 .reddit {
   background: var(--redditDark);
   color: white;
@@ -350,18 +469,6 @@ nav ul a {
   border-radius: 100px;
   font-size: 1.5em;
   max-height: 1em;
-}
-
-.redditMemeElement {
-  display: flex;
-  flex-direction: column;
-  grid-gap: 1em;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 1em 1.5em;
-  text-align: left;
-  font-weight: 600;
-  font-size: .85em;
 }
 
 footer {
@@ -401,22 +508,11 @@ footer {
   width: 27%;
 }
 
-.newsElement {
-  display: flex;
-  flex-direction: column;
-  grid-gap: 1em;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 1em 1.5em;
-  text-align: left;
-  font-weight: 600;
-  font-size: .85em;
-  width: 100%;
-}
-
 .notFound {
   font-size: .6em;
 }
+
+/* Reddit */
 
 .reddit i {
   color: var(--redditMain);
@@ -456,11 +552,6 @@ footer {
   background: var(--cbs);
 }
 
-.youtube{
-  background: white;
-  color:var(--richblack);
-}
-
 .cnn{
   background: var(--cnnGrey);
   color: #FFFBFF;
@@ -475,13 +566,51 @@ footer {
   background: var(--espnRed)
 }
 
-.cspan{
+/* .cspan{
   background: var(--cspan);
   color:#FFFBFF;
-}
+} */
 
 /* category section styling */
 .categorySection {
   display: flex;
   justify-content: center;
+}
+
+
+/* Media Queries */
+@media screen and (max-width: 1470px) {
+    .newsRow {
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+
+  .newsColumn {
+    width: 47%;
+  }
+}
+
+@media screen and (max-width: 915px) {
+  .newsColumn {
+    width: 45%;
+  }
+
+  .columnTitle {
+    font-size: .9em;
+  }
+}
+
+@media screen and (max-width: 745px) and (min-width: 690px) {
+  .columnTitle {
+    font-size: .8em;
+  }
+}
+
+@media screen and (max-width: 676px) {
+  .newsColumn {
+    width: 100%;
+  }
+  .columnTitle {
+    font-size: 1em;
+  }
 }
