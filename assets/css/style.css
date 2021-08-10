@@ -9,12 +9,16 @@
 /* Special Elite */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Special+Elite&display=swap');
 
+/* Noticia Text */
+@import url('https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 * {
   box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
+  overflow: hidden;
 }
 
 body {
@@ -42,7 +46,7 @@ body {
 }
 
 h1 {
-  font-family: 'Special Elite';
+  font-family: 'montserrat';
 }
 
 a {
@@ -64,7 +68,6 @@ header {
   padding: 1em 0em;
   background: white;
   border: none;
-  margin-bottom: 35px;
   align-items: center;
   margin-top: 0;
   width: 100%;
@@ -75,8 +78,18 @@ nav.navbar {
   width: 100%;
 }
 
+.navbar-end a {
+  border-radius: 20px;
+  transition: 150ms ease-in-out;
+}
+
+.navbar-end a:hover {
+  background: black;
+  color: #fff;
+}
+
 header h1 {
-  font-family: 'MonteCarlo';
+  font-family: 'montserrat';
   font-size: 2.5em !important;
 }
 
@@ -162,9 +175,10 @@ h1 {
   display: flex;
   flex-direction: column;
   grid-gap: 2em;
-  border: solid 1px #000;
-  background: var(--bisque);
+  background: #fff;
   width: 100%;
+  min-height: 82vh;
+  justify-content: center;
 }
 
 .newsRow {
@@ -259,10 +273,11 @@ i.fas.fa-address-card {
 
 .goodmorning-menu {
   justify-content: space-between;
+  align-items: center;
 }
 
 .navbar-brand {
-  min-width: 13em;
+  min-width: 14em;
 }
 .navbar-start {
   margin: 0;
@@ -272,6 +287,8 @@ i.fas.fa-address-card {
 .navbar-end {
   margin: 0;
   justify-content: flex-start;
+  padding-right: 1em;
+  grid-gap: 1em;
 }
 
 nav ul a {
@@ -486,6 +503,10 @@ footer {
   justify-content: center;
   grid-gap: 1em;
   align-items: center;
+}
+
+.footer {
+  background: #ffffff;
 }
 
 .footer-cup {
