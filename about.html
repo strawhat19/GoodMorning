@@ -24,34 +24,51 @@
   <header class="GoodMorning">
     <!-- Adding Bulma NavBar -->
     <nav class="navbar" role="navigation" aria-label="main navigation">
-      
     
       <div id="navbarBasicExample" class="navbar-menu goodmorning-menu">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="#">
-            <img class="cup" src="./assets/css/images/GoodMorning-LogoCROPPED-.png">
-          </a>
-      
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
-        <div class="navbar-start">
-          GoodMorning News App
-        </div>
-    
-        <div class="navbar-end">
-          <a class="navbar-item" href="./">
-            <i class="fas fa-home"></i>Home
-          </a>
-    
-          <a class="navbar-item aboutLink" href="./about.html">
+        <div class="desktopMenu">
+          
+          <div class="navbar-brand">
+            <a class="navbar-item" href="#"><img class="cup" src="./assets/css/images/PlatedGoodMorningLogo.svg"></a>
+          </div>
 
-            <i class="fas fa-address-card"></i>About
-          </a>
+          <div class="navbar-start">GoodMorning News App</div>
+    
+          <div class="navbar-end">
+            <a class="navbar-item" href="./"><i class="fas fa-home"></i>Home</a>
+            <a class="navbar-item aboutLink" href="./about.html"><i class="fas fa-address-card"></i>About</a>
+          </div>
+
+        </div>
+
+      <!-- Menu Toggler // Javascript -->
+      <div class="mobile-menu-option" id="mobile-menu-option">
+
+      <!-- Desktop // Mobile Menu Toggle -->
+        <div class="mobileMenu">
+
+          <div class="navbar-brand">
+            <a class="navbar-item" href="#"><img class="cup" src="./assets/css/images/PlatedGoodMorningLogo.svg"></a>
+            <div class="navbar-start">GoodMorning News App</div>
+          </div>
+    
+          <div class="navbar-end">
+            <div id="menuToggle" onclick="openMobileMenu()">
+              <a id="openMenuToggler" class="openMenuToggler">
+                  <span id="menuTogglerSpan" class="menuTogglerSpan"></span>
+                  <span id="menuTogglerSpan" class="menuTogglerSpan"></span>
+                  <span id="menuTogglerSpan" class="menuTogglerSpan"></span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+          <div class="mobileMenuLinks">
+            <a class="navbar-item" href="./"><i class="fas fa-home"></i>Home</a>
+            <a class="navbar-item aboutLink" href="./about.html"><i class="fas fa-address-card"></i>About</a>
+          </div>
       </div>
+
     </nav>
   </header>
   
@@ -118,7 +135,7 @@
   <footer class="footer">
     <div class="content has-text-centered goodmorning-footer">
       <a class="navbar-item" href="#">
-        <img class="footer-cup cup" src="./assets/css/images/GoodMorning-LogoCROPPED-.png">
+        <img class="footer-cup cup" src="./assets/css/images/PlatedGoodMorningLogo.svg">
       </a>
       <p>
         <strong>This app was created by the GoodMorining Team</strong>
