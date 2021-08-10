@@ -25,6 +25,7 @@ p {
     margin-left: 10px;
     margin-top: 10px;
     border-radius: 50px;
+    transition: 150ms ease-in-out;
 }
 .nameImageHeader {
     display: flex;

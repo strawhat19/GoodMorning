@@ -9,7 +9,20 @@ var espn = document.querySelector('ESPN');
 var cspan = document.querySelector('CNBC');
 var news = document.querySelector('news');
 
-  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+// Open and Close Mobile Menu
+
+const openMenu = document.getElementById("openMenu");
+const closeMenu = document.getElementById("closeMenu");
+
+function openMobileMenu() {
+	var menuToggler = document.getElementById("openMenuToggler");
+	menuToggler.classList.toggle('clicked');
+  var mobileMenu = $('.mobileMenuLinks');
+  console.log(mobileMenu);
+  mobileMenu.toggle('show');
+}
+
+const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
 // Check if there are any navbar burgers
 if ($navbarBurgers.length > 0) {
