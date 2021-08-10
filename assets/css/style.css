@@ -242,6 +242,16 @@ h1 {
   text-transform: uppercase;
 }
 
+#map {
+  height: 100%;
+  width: 100%;
+  border-radius: 25px;
+  opacity: 0.85;
+  backdrop-filter: blur(10px);
+  border: solid 3px #00c4ff;
+  min-height: 145px;
+}
+
 .cup {
   width: 100%;
   max-height: 4em !important;
@@ -539,7 +549,7 @@ button:hover {
 }
 
 .subNewsLogo {
-  max-width: 10%;
+  max-width: 7%;
 }
 
 .subNewsSource {
@@ -674,6 +684,10 @@ footer {
 
 .nasaLogo {
   max-height: 2.5em;
+}
+
+.nasaImageSource {
+  margin: 0 auto;
 }
 
 /* News */

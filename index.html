@@ -90,10 +90,28 @@
       </div>
 
       <div class="newsRow">
-        <div class="newsColumn">
-          <div class="columnTitle">Top R/News Articles <img class="subNewsLogo logo" src="./assets/css/images/rslashnewslogo.png"></div>
-      </div>
+        <div class="newsColumn weather">
+            <div class="columnTitle">Location & Forecast <img class="subNewsLogo logo" src="./assets/css/images/rslashnewslogo.png"></div>
+            <div id="map"></div>
+        </div>
         <div class="newsColumn reddit memes">
+          <div class="columnTitle">R/Memes <i class="fab fa-reddit"></i></div>
+        </div>
+        <div class="newsColumn news">
+            <div class="columnTitle">Top Articles <img src="./assets/css/images/newsAPI-1.png" alt="" class="newsImage"></div>
+          </div>
+      
+        <div class="newsColumn youtube">
+          <div class="columnTitle">Top Youtube Videos <i class="fab fa-youtube"></i></div>
+        </div>
+      </div>
+
+      <div class="newsRow yishay">
+        <div class="newsColumn weather">
+            <div class="columnTitle">Location & Forecast <img class="subNewsLogo logo" src="./assets/css/images/rslashnewslogo.png"></div>
+            <div id="map"></div>
+        </div>
+        <div class="newsColumn">
           <div class="columnTitle">R/Memes <i class="fab fa-reddit"></i></div>
         </div>
         <div class="newsColumn news">
@@ -123,6 +141,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- Moment.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<!-- Google Maps API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDS9k5V2rEyMVVqtgHpon-Ro8hRQAatBx8&callback=initmap"></script>
 <script src="./assets/js/script.js"></script>
 <script src="./assets/js/fetch.js"></script>
 </body>
