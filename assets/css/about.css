@@ -56,10 +56,23 @@ p {
     display:grid;
     background-color: #fafafa;
     margin: 2em;
+    height: 600px;
+    width: 600px;
 }
 
 .images:hover {
     transform: scale(4,4);
 }
 
+.btn {
+    font-size: 20px;
+    white-space: normal;
+    word-wrap: break-word;
+}
+.btn:hover {
+    background-color: #00d1b2;
+}
 
+.AboutMecontainer button {
+    height: 4em;
+}
