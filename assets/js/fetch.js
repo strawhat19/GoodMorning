@@ -1,55 +1,88 @@
 // Variables
 var newsColumns = $('.newsColumn');
 
-// Fetch Script Code
+// R/news
 var redditKey = 'NWALDmX-ufQV53BKp0JLVw';
-var redditRequestURL = 'https://www.reddit.com/r/memes/new.json?limit=10';
-
 var redditRSlashNews = 'https://www.reddit.com/r/news/.json?limit=24';
 
-var newsAPIKey = '2f267a06ae2f4a1b95005660a4a14c34';
-var newsRequestURL = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsAPIKey}`;
-
-var abcRequestURL = `https://api.abc.com/resources/.json?limit=24`;
-
-var youtubeAPIKey = 'AIzaSyCHeOuNp6-T00l_ePO4-OTArWGMBqXkwjQ';
-var youtubeRequestURL = `https://www.googleapis.com/youtube/v3/videos?id=7lCDEYXw3mM&key=${youtubeAPIKey}&part=snippet,contentDetails,statistics,status`;
-var youtubeVideoURL = `https://www.youtube.com/watch?v=`;
-var youtubeChannelURL = `https://www.youtube.com/c/`;
-
-var youtubeListURL = `https://youtube.googleapis.com/youtube/v3/search?key=${youtubeAPIKey}`;
-
-var nationalArchivesAPI = `https://catalog.archives.gov/api/v1/`;
-
-// Youtube List API
-fetch(youtubeListURL)
+// Fetching
+fetch(redditRSlashNews)
 .then(response => {
     return response.json();
 }).then(data => {
-    console.log('Youtube List API Data Is:');
+    console.log('Reddit News API Data Is:');
     console.log(data);
-    for (var i = 0; i < data.items.length; i++) {
-        var youtube = $('.youtube');
-        var videoID = data.items[i].id.videoId;
-        var videoLink = youtubeVideoURL+data.items[i].id.videoId;
-        console.log(videoLink);
-        var videoElement = $(`
-        <div class="videoElement element">
-            <iframe src="https://www.youtube.com/embed/${videoID}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    for (var i = 0; i < data.data.children.length; i++) {
+        var subNews = $('.subNews');
+        var redditURL = 'https://www.reddit.com';
+        var subNewsSource = data.data.children[i].data.url;
+        var subNewsSourceName = data.data.children[i].data.domain;
+        var subNewsTitle = data.data.children[i].data.title;
+        var subNewsAuthor = data.data.children[i].data.author;
+        var subNewsLink = data.data.children[i].data.permalink;
+        var authorLink = redditURL+'/user/'+subNewsAuthor;
+        var subNewsElement = $(`
+        <div class="subNewsElement element">
+            <div class="subNewsTitle elementTitle">
+                <div class="titleRow">
+                    <span class="index subNewsIndex">${i+1 + '. '}</span>
+                    <a class="subNewsLink elementLink" target="_blank" href="${redditURL+subNewsLink}">${subNewsTitle}</a>
+                </div>
+                <span class="byLine">By 
+                        <a class="authorLink subNewsLink elementLink" href="${authorLink}" target="_blank">${subNewsAuthor}</a>
+                </span>
+            </div>
+            <a class="subNewsLink elementLink subNewsSource" target="_blank" href="${subNewsSource}">
+                <i class="fas fa-external-link-alt external"></i> ${subNewsSourceName}
+            </a>
         </div>
         `);
-        youtube.append(videoElement);
+        subNews.append(subNewsElement);
     }
 })
 
-// Youtube Video API
-fetch(youtubeRequestURL)
+// Reddit CNN
+var redditRequestURL = 'https://www.reddit.com/r/cnn/new.json?limit=24';
+
+// Reddit CNN Fetch
+fetch(redditRequestURL)
 .then(response => {
     return response.json();
 }).then(data => {
-    console.log('Youtube API Data Is:');
+    console.log('Reddit CNN API Data Is:');
     console.log(data);
+    for (var i = 0; i < data.data.children.length; i++) {
+        var reddit = $('.slashCNN');
+        var redditURL = 'https://www.reddit.com';
+        var cnnSources = data.data.children[i].data.url;
+        var cnnSourceName = data.data.children[i].data.domain;
+        var cnnTitle = data.data.children[i].data.title;
+        var cnnAuthor = data.data.children[i].data.author;
+        var cnnLink = data.data.children[i].data.permalink;
+        var authorLink = redditURL+'/user/'+cnnAuthor;
+        var linkLettersArray = cnnSources.split('');
+        var cnnElement = $(`
+        <div class="redditcnnElement element">
+            <div class="cnnTitle elementTitle">
+                <div class="titleRow">
+                    <span class="index">${i+1 + '. '}</span>
+                    <a class="cnnLink elementLink" target="_blank" href="${redditURL+cnnLink}">${cnnTitle}</a>
+                </div>
+                <span class="byLine">By 
+                        <a class="authorLink cnnLink elementLink" href="${authorLink}" target="_blank">${cnnAuthor}</a>
+                </span>
+            </div>
+            <a class="cnnLink elementLink cnnSource" target="_blank" href="${cnnSources}">
+                <i class="fas fa-external-link-alt external"></i> ${cnnSourceName}
+            </a>
+        </div>
+        `);
+        reddit.append(cnnElement);
+    }
 })
+
+// National Archives
+var nationalArchivesAPI = `https://catalog.archives.gov/api/v1/`;
 
 // National Archives API
 fetch(nationalArchivesAPI)
@@ -59,6 +92,98 @@ fetch(nationalArchivesAPI)
     console.log('National Archives Data Is:');
     console.log(data);
 })
+
+// Fetching Nasa Images
+var nasaKey = `wC0OktvMTSEtJByir363uFfuw3YhKmezYxfQ1BGq`;
+var nasaImageSearchTerms = ['planet','stars','universe','galaxy','space','mars'];
+var x = Math.floor(Math.random() * nasaImageSearchTerms.length)+1;
+var nasaImagesSearch = `https://images-api.nasa.gov/search?q=${nasaImageSearchTerms[x]}`;
+var nasaImagesKey = `https://images-api.nasa.gov?api_key=wC0OktvMTSEtJByir363uFfuw3YhKmezYxfQ1BGq`;
+
+// NASA Images API
+fetch(nasaImagesSearch)
+.then(response => {
+    return response.json();
+}).then(data => {
+    var nasa = $('.nasa');
+    console.log('NASA Image Data Is:');
+    console.log(data);
+    for (var i = 0; i < data.collection.items.length; i++) {
+        var nasaImageTitle = data.collection.items[i].data[0].title;
+        var nasaImage = data.collection.items[i].links[0].href;
+        // var nasaSideFetch = data.collection.items[i].href;
+        // fetch(nasaSideFetch).then(newResponse => {return newResponse.json()}).then((linkData,nasaImage) => {
+        //         var nasaImageArray = filterImageGallery(linkData,'.jpg');
+        //         console.log(nasaImageArray);
+        //         localStorage.setItem('Nasa Images', JSON.stringify(nasaImageArray));
+        //         // var nasaVideoArray = filterImageGallery(linkData,'.mp4');
+        //         var nasaImages = JSON.parse(localStorage.getItem('Nasa Images')) || [];
+        //         function filterImageGallery(array, query) {
+        //             return array.filter(function(jpg) {
+        //                 return jpg.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+        //         })
+        //     }
+        // })
+        var nasaImageElement = $(`
+            <div class="nasaImageElement element">
+                <div class="nasaImageTitle elementTitle">
+                    <div class="titleRow">
+                        <span class="index">${i+1 + '. '}</span>
+                        <a class="nasaImageLink elementLink" target="_blank" href="${nasaImage}">${nasaImageTitle}</a>
+                    </div>
+                    <span class="byLine"></span>
+                </div>
+                 <a class="nasaImageLink elementLink nasaImageSource" target="_blank" href="${nasaImage}">
+                     <img class="nasaImage" src="${nasaImage}">
+                 </a>
+            </div>
+             `);
+        nasa.append(nasaImageElement);
+    }
+})
+
+
+// Reddit Memes
+var redditMemeRequestURL = 'https://www.reddit.com/r/memes/new.json?limit=10';
+
+// Reddit Memes Fetch
+fetch(redditMemeRequestURL)
+.then(response => {
+    return response.json();
+}).then(data => {
+    console.log('Reddit Meme API Data Is:');
+    console.log(data);
+    for (var i = 0; i < data.data.children.length; i++) {
+        var reddit = $('.memes');
+        var redditURL = 'https://www.reddit.com';
+        var memeImages = data.data.children[i].data.url;
+        var memeTitle = data.data.children[i].data.title;
+        var memeAuthor = data.data.children[i].data.author;
+        var memeLink = data.data.children[i].data.permalink;
+        var authorLink = redditURL+'/user/'+memeAuthor;
+        var memeElement = $(`
+        <div class="redditMemeElement element">
+            <div class="memeTitle elementTitle">
+                <div class="titleRow">
+                    <span class="index">${i+1 + '. '}</span>
+                    <a class="memeLink elementLink" target="_blank" href="${redditURL+memeLink}">${memeTitle}</a>
+                </div>
+                <span class="byLine">By 
+                        <a class="authorLink memeLink elementLink" href="${authorLink}" target="_blank">${memeAuthor}</a>
+                </span>
+            </div>
+            <a class="memeLink elementLink" target="_blank" href="${redditURL+memeLink}">
+                <img class="redditMeme" src="${memeImages}">
+            </a>
+        </div>
+        `);
+        reddit.append(memeElement);
+    }
+})
+
+// News API
+var newsAPIKey = '2f267a06ae2f4a1b95005660a4a14c34';
+var newsRequestURL = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsAPIKey}`;
 
 // News API Fetch
 fetch(newsRequestURL)
@@ -105,6 +230,11 @@ fetch(newsRequestURL)
     }
 })
 
+// Deprecated
+
+// ABC
+// var abcRequestURL = `https://api.abc.com/resources/.json?limit=24`;
+
 // // ABC News
 // fetch(abcRequestURL)
 // .then(response => {
@@ -141,79 +271,78 @@ fetch(newsRequestURL)
 //     // }
 // })
 
-// ABC
-fetch(redditRSlashNews)
-.then(response => {
-    return response.json();
-}).then(data => {
-    console.log('Reddit News API Data Is:');
-    console.log(data);
-    for (var i = 0; i < data.data.children.length; i++) {
-        var subNews = $('.subNews');
-        var redditURL = 'https://www.reddit.com';
-        var subNewsSource = data.data.children[i].data.url;
-        var subNewsSourceName = data.data.children[i].data.domain;
-        var subNewsTitle = data.data.children[i].data.title;
-        var subNewsAuthor = data.data.children[i].data.author;
-        var subNewsLink = data.data.children[i].data.permalink;
-        var authorLink = redditURL+'/user/'+subNewsAuthor;
-        var subNewsElement = $(`
-        <div class="subNewsElement element">
-            <div class="subNewsTitle elementTitle">
-                <div class="titleRow">
-                    <span class="index subNewsIndex">${i+1 + '. '}</span>
-                    <a class="subNewsLink elementLink" target="_blank" href="${redditURL+subNewsLink}">${subNewsTitle}</a>
-                </div>
-                <span class="byLine">By 
-                        <a class="authorLink subNewsLink elementLink" href="${authorLink}" target="_blank">${subNewsAuthor}</a>
-                </span>
-            </div>
-            <a class="subNewsLink elementLink subNewsSource" target="_blank" href="${subNewsSource}">
-            <i class="fas fa-external-link-alt external"></i> ${subNewsSourceName}
-            </a>
-        </div>
-        `); // Had to do this in vanilla JS
-        subNews.append(subNewsElement);
-    }
-})
+// Youtube
+// var youtubeAPIKey = 'AIzaSyCHeOuNp6-T00l_ePO4-OTArWGMBqXkwjQ';
+// var youtubeRequestURL = `https://www.googleapis.com/youtube/v3/videos?id=7lCDEYXw3mM&key=${youtubeAPIKey}&part=snippet,contentDetails,statistics,status`;
+// var youtubeVideoURL = `https://www.youtube.com/watch?v=`;
+// var youtubeChannelURL = `https://www.youtube.com/c/`;
+// var youtubeListURL = `https://youtube.googleapis.com/youtube/v3/search?key=${youtubeAPIKey}`;
 
-// Reddit Memes Fetch
-fetch(redditRequestURL)
-.then(response => {
-    return response.json();
-}).then(data => {
-    console.log('Reddit Meme API Data Is:');
-    console.log(data);
-    for (var i = 0; i < data.data.children.length; i++) {
-        var reddit = $('.reddit');
-        var redditURL = 'https://www.reddit.com';
-        var memeImages = data.data.children[i].data.url;
-        var memeTitle = data.data.children[i].data.title;
-        var memeAuthor = data.data.children[i].data.author;
-        var memeLink = data.data.children[i].data.permalink;
-        var authorLink = redditURL+'/user/'+memeAuthor;
-        var linkLettersArray = memeImages.split('');
-        var memeElement = $(`
-        <div class="redditMemeElement element">
-            <div class="memeTitle elementTitle">
-                <div class="titleRow">
-                    <span class="index">${i+1 + '. '}</span>
-                    <a class="memeLink elementLink" target="_blank" href="${redditURL+memeLink}">${memeTitle}</a>
-                </div>
-                <span class="byLine">By 
-                        <a class="authorLink memeLink elementLink" href="${authorLink}" target="_blank">${memeAuthor}</a>
-                </span>
-            </div>
-            <a class="memeLink elementLink" target="_blank" href="${redditURL+memeLink}">
-                <img class="redditMeme" src="${memeImages}">
-            </a>
-        </div>
-        `); // Had to do this in vanilla JS
-        var memeSpecificImage = document.querySelectorAll('.redditMeme');
-        // console.log(memeSpecificImage);
-        if (linkLettersArray[8] === 'v' || linkLettersArray[8] === 'i') {
-            // console.log(linkLettersArray);
-        }
-        reddit.append(memeElement);
-    }
-})
+// // Youtube List API
+// fetch(youtubeListURL)
+// .then(response => {
+//     return response.json();
+// }).then(data => {
+//     console.log('Youtube List API Data Is:');
+//     console.log(data);
+//     for (var i = 0; i < data.items.length; i++) {
+//         var youtube = $('.youtube');
+//         var videoID = data.items[i].id.videoId;
+//         var videoLink = youtubeVideoURL+data.items[i].id.videoId;
+//         console.log(videoLink);
+//         var videoElement = $(`
+//         <div class="videoElement element">
+//             <iframe src="https://www.youtube.com/embed/${videoID}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+//         </div>
+//         `);
+//         youtube.append(videoElement);
+//     }
+// })
+
+// // Youtube Video API
+// fetch(youtubeRequestURL)
+// .then(response => {
+//     return response.json();
+// }).then(data => {
+//     console.log('Youtube API Data Is:');
+//     console.log(data);
+// })
+
+// // Fetching Nasa Data
+// var nasaAPI = `https://api.nasa.gov/planetary/apod?api_key=wC0OktvMTSEtJByir363uFfuw3YhKmezYxfQ1BGq`;
+
+// // NASA API
+// fetch(nasaAPI)
+// .then(response => {
+//     return response.json();
+// }).then(data => {
+//     console.log('NASA Data Is:');
+//     console.log(data);
+// })
+
+        // nasaImageTitles.push(nasaImageTitle);
+        // nasaImageTitles.splice(100);
+        // localStorage.setItem('Nasa Titles',JSON.stringify(nasaImageTitles));
+        // var nasaSideFetch = data.collection.items[i].href;
+        // fetch(nasaSideFetch).then(newResponse => {return newResponse.json()}).then((linkData,nasaImage) => {
+        //     var nasaImageArray = filterImageGallery(linkData,'.jpg');
+        //     var nasaLargeImage = nasaImageArray[0];
+        //     var nasaVideoArray = filterImageGallery(linkData,'.mp4');
+        //     var nasaVideo = nasaVideoArray[0];
+        //     var nasaImageTitles = JSON.parse(localStorage.getItem('Nasa Titles')) || [];
+        //     console.log(nasaImageTitles);
+        //     var nasaImageElement = $(`
+        //     <div class="nasaImageElement element">
+        //         <a class="nasaImageLink elementLink nasaImageSource" target="_blank" href="${nasaLargeImage}">
+        //             <img class="nasaImage" src="${nasaLargeImage}">
+        //         </a>
+        //     </div>
+        //     `);
+        //     localStorage.setItem('Nasa Image Links',JSON.stringify(nasaImageArray));
+        //     localStorage.setItem('Nasa Video Links',JSON.stringify(nasaVideoArray));
+        //     function filterImageGallery(array, query) {
+        //         return array.filter(function(jpg) {
+        //             return jpg.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+        //         })
+        //     }
+        // })
