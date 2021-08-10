@@ -67,3 +67,13 @@ if ($navbarBurgers.length > 0) {
     });
   });
 }
+
+var dowJonesURL = `https://api.dowjones.com/content-collections/drn%3Aconsumer.collection.originid.NP_GlobalNews_1?prepub=true`
+// National Archives API
+fetch(dowJonesURL)
+.then(response => {
+    return response.json();
+}).then(data => {
+    console.log('Dow Jones Archives Data Is:');
+    console.log(data);
+})
