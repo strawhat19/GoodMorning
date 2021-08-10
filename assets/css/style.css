@@ -44,6 +44,7 @@ body {
   --subnews: #77b3d4;
   --youtube: #f41915;
   --slashcnn: #cc0000;
+  --nationalarchive: #2d4d76;
 }
 
 h1 {
@@ -469,12 +470,6 @@ button:hover {
 .authorLink {
   padding-left: .2em;
 }
-
-/* National Archives */
-
-.nationalArchivesImage {
-  max-height: 1em;
-}
 /* r/cnn */
 .slashCNN {
   background: var(--slashcnn);
@@ -522,7 +517,7 @@ button:hover {
 }
 
 .subNewsIndex {
-  background: url(./images/rslashnewslogo.png);
+  background: linear-gradient(rgb(255 255 255 / 70%),rgb(255 255 255 / 70%)),url(./images/rslashnewslogo.png);
   background-position: 50% 50%;
   padding: 1em;
   background-size: contain;
@@ -657,6 +652,28 @@ footer {
 
 .footer-cup {
   width: 4em;
+}
+
+/* National Archives */
+.nationalArchives {
+  background: var(--nationalarchive);
+  color: #fff;
+}
+
+.nationalArchivesImage {
+  max-height: 1.4em;
+  filter: invert(1);
+}
+
+/* Nasa */
+.nasa {
+  background: url(./images/starfield-banner.jpg);
+  color: white;
+  background-size: contain;
+}
+
+.nasaLogo {
+  max-height: 2.5em;
 }
 
 /* News */
