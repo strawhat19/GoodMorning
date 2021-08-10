@@ -8,7 +8,7 @@
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 40px;
     margin-top: 20px;
     font-weight: bold;
 }
@@ -20,11 +20,11 @@ p {
 
 .images {
     display: flex;
-    width: 60px;
-    height: 60px;
+    width: 90px;
+    height: 90px;
     margin-left: 10px;
     margin-top: 10px;
-    border-radius: 30px;
+    border-radius: 50px;
 }
 .nameImageHeader {
     display: flex;
@@ -56,10 +56,23 @@ p {
     display:grid;
     background-color: #fafafa;
     margin: 2em;
+    height: 600px;
+    width: 600px;
 }
 
 .images:hover {
     transform: scale(4,4);
 }
 
+.btn {
+    font-size: 20px;
+    white-space: normal;
+    word-wrap: break-word;
+}
+.btn:hover {
+    background-color: #00d1b2;
+}
 
+.AboutMecontainer button {
+    height: 4em;
+}
