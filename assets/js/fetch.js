@@ -8,7 +8,7 @@ var redditRequestURL = 'https://www.reddit.com/r/memes/new.json?limit=10';
 var redditRSlashNews = 'https://www.reddit.com/r/news/.json?limit=24';
 
 var newsAPIKey = '2f267a06ae2f4a1b95005660a4a14c34';
-var newsRequestURL = `http://newsapi.org/v2/top-headlines?country=us&apiKey=${newsAPIKey}`;
+var newsRequestURL = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsAPIKey}`;
 
 var abcRequestURL = `https://api.abc.com/resources/.json?limit=24`;
 
