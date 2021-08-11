@@ -91,6 +91,57 @@ fetch(nationalArchivesAPI)
 }).then(data => {
     console.log('National Archives Data Is:');
     console.log(data);
+    var descriptionArchives = [];
+    for (var i = 0; i < data.opaResponse.results.result.length; i++) {
+        var nationalArchives = $('.nationalArchives');
+        var archiveType = data.opaResponse.results.result[i].type;
+        if (archiveType === 'description') {
+            var archiveTitle = data.opaResponse.results.result[i].description.item.parentFileUnit.title;
+            var archiveSubTitle = data.opaResponse.results.result[i].description.item.title;
+            for (var key in data.opaResponse.results.result[i].objects.object.thumbnail) {
+                var keys = Object.keys(data.opaResponse.results.result[i].objects.object.thumbnail);
+                var urlKey = keys[2];
+                var thumbNailObject = data.opaResponse.results.result[i].objects.object.thumbnail;
+                var value = thumbNailObject;
+                console.log(url);
+                console.log(urlKey);
+                console.log(key);
+                console.log(keys);
+                console.log(value);
+            }
+            var { mime,path,archivePDFThumb } = data.opaResponse.results.result[i].objects.object.thumbnail;
+            console.log(archivePDFThumb);
+            var archivePDF = data.opaResponse.results.result[i].objects.object.file.url;
+            var archive = {
+                title: archiveTitle,
+                subtitle: archiveSubTitle,
+                thumb: archivePDFThumb,
+                pdf: archivePDF
+            }
+            descriptionArchives.push(archive);
+            // console.log(descriptionArchives);
+        }
+    } // Creating Archive Description Elements
+    descriptionArchives.forEach((archive,index) => {
+        var naElement = $(`
+            <div class="naElement element">
+                <div class="naTitle elementTitle">
+                    <div class="titleRow">
+                        <span class="index">${index+1 + '. '}</span>
+                        <a class="naLink elementLink" target="_blank" href="${archivePDF}">${archive.title}<div class="subTitle">${archiveSubTitle}</div></a>
+                    </div>
+                    <span class="byLine"> 
+                        <a class="authorLink naLink elementLink" href="" target="_blank"></a>
+                    </span>
+                </div>
+                <a class="naLink elementLink naSource" target="_blank" href="${archivePDF}">
+                    <i class="fas fa-external-link-alt external"></i> ${archivePDFThumb}
+                </a>
+            </div>
+        `);
+        nationalArchives.append(naElement);
+    })
+    
 })
 
 // Fetching Nasa Images
@@ -146,39 +197,39 @@ fetch(nasaImagesSearch)
 var redditMemeRequestURL = 'https://www.reddit.com/r/memes/new.json?limit=10';
 
 // // Reddit Memes Fetch
-// fetch(redditMemeRequestURL)
-// .then(response => {
-//     return response.json();
-// }).then(data => {
-//     console.log('Reddit Meme API Data Is:');
-//     console.log(data);
-//     for (var i = 0; i < data.data.children.length; i++) {
-//         var reddit = $('.memes');
-//         var redditURL = 'https://www.reddit.com';
-//         var memeImages = data.data.children[i].data.url;
-//         var memeTitle = data.data.children[i].data.title;
-//         var memeAuthor = data.data.children[i].data.author;
-//         var memeLink = data.data.children[i].data.permalink;
-//         var authorLink = redditURL+'/user/'+memeAuthor;
-//         var memeElement = $(`
-//         <div class="redditMemeElement element">
-//             <div class="memeTitle elementTitle">
-//                 <div class="titleRow">
-//                     <span class="index">${i+1 + '. '}</span>
-//                     <a class="memeLink elementLink" target="_blank" href="${redditURL+memeLink}">${memeTitle}</a>
-//                 </div>
-//                 <span class="byLine">By 
-//                         <a class="authorLink memeLink elementLink" href="${authorLink}" target="_blank">${memeAuthor}</a>
-//                 </span>
-//             </div>
-//             <a class="memeLink elementLink" target="_blank" href="${redditURL+memeLink}">
-//                 <img class="redditMeme" src="${memeImages}">
-//             </a>
-//         </div>
-//         `);
-//         reddit.append(memeElement);
-//     }
-// })
+fetch(redditMemeRequestURL)
+.then(response => {
+    return response.json();
+}).then(data => {
+    console.log('Reddit Meme API Data Is:');
+    console.log(data);
+    for (var i = 0; i < data.data.children.length; i++) {
+        var reddit = $('.memes');
+        var redditURL = 'https://www.reddit.com';
+        var memeImages = data.data.children[i].data.url;
+        var memeTitle = data.data.children[i].data.title;
+        var memeAuthor = data.data.children[i].data.author;
+        var memeLink = data.data.children[i].data.permalink;
+        var authorLink = redditURL+'/user/'+memeAuthor;
+        var memeElement = $(`
+        <div class="redditMemeElement element">
+            <div class="memeTitle elementTitle">
+                <div class="titleRow">
+                    <span class="index">${i+1 + '. '}</span>
+                    <a class="memeLink elementLink" target="_blank" href="${redditURL+memeLink}">${memeTitle}</a>
+                </div>
+                <span class="byLine">By 
+                        <a class="authorLink memeLink elementLink" href="${authorLink}" target="_blank">${memeAuthor}</a>
+                </span>
+            </div>
+            <a class="memeLink elementLink" target="_blank" href="${redditURL+memeLink}">
+                <img class="redditMeme" src="${memeImages}">
+            </a>
+        </div>
+        `);
+        reddit.append(memeElement);
+    }
+})
 
 // Generating Weather
 var weatherAPIKey = 'ce5300e7acaa327ad655b8a21d5130d8';
