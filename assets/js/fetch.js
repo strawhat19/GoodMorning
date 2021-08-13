@@ -91,24 +91,19 @@ fetch(nationalArchivesAPI)
 }).then(data => {
     console.log('National Archives Data Is:');
     console.log(data);
-    var descriptionArchives = [];
+    let descriptionArchives = [];
+    let nationalArchives = $('.nationalArchives');
     for (var i = 0; i < data.opaResponse.results.result.length; i++) {
-        var nationalArchives = $('.nationalArchives');
-        var archiveType = data.opaResponse.results.result[i].type;
+        let archiveType = data.opaResponse.results.result[i].type;
         if (archiveType === 'description') {
-            var archiveTitle = data.opaResponse.results.result[i].description.item.parentFileUnit.title;
-            var archiveSubTitle = data.opaResponse.results.result[i].description.item.title;
-            for (var key in data.opaResponse.results.result[i].objects.object.thumbnail) {
-                var keys = Object.keys(data.opaResponse.results.result[i].objects.object.thumbnail);
-                var thumbNailObject = data.opaResponse.results.result[i].objects.object.thumbnail;
-                var value = thumbNailObject[key];
-            }
-            var archivePDF = data.opaResponse.results.result[i].objects.object.file['@url'];
-            console.log(archivePDF);
-            var archive = {
+            let archiveTitle = data.opaResponse.results.result[i].description.item.parentFileUnit.title;
+            let archiveSubTitle = data.opaResponse.results.result[i].description.item.title;
+            let archivePDF = data.opaResponse.results.result[i].objects.object.file['@url'];
+            let archivePDFThumb = data.opaResponse.results.result[i].objects.object.thumbnail['@url'];
+            let archive = {
                 title: archiveTitle,
                 subtitle: archiveSubTitle,
-                // thumb: archivePDFThumb,
+                thumb: archivePDFThumb,
                 pdf: archivePDF
             }
             descriptionArchives.push(archive);
@@ -121,14 +116,14 @@ fetch(nationalArchivesAPI)
                 <div class="naTitle elementTitle">
                     <div class="titleRow">
                         <span class="index">${index+1 + '. '}</span>
-                        <a class="naLink elementLink" target="_blank" href="${archivePDF}">${archive.title}<div class="subTitle">${archiveSubTitle}</div></a>
+                        <a class="naLink elementLink" target="_blank" href="${archive.pdf}">${archive.subtitle}<div class="subTitle">${archive.title}</div></a>
                     </div>
                     <span class="byLine"> 
                         <a class="authorLink naLink elementLink" href="" target="_blank"></a>
                     </span>
                 </div>
-                <a class="naLink elementLink naSource" target="_blank" href="${archivePDF}">
-                    <i class="fas fa-external-link-alt external"></i> ${archivePDFThumb}
+                <a class="naImageLink elementLink naImageSource" target="_blank" href="${archive.pdf}">
+                    <img class="naImage" src="${archive.thumb}">
                 </a>
             </div>
         `);
@@ -370,7 +365,7 @@ fetch(youtubeRequest)
             <span class="byLine">By 
                 <a class="articleLink elementLink" target="_blank" href="${videoChannelURL}">${videoChannelName}</a>
             </span>
-            <a class="videoLink elementLink" target="_blank" href="${videoURL}">
+            <a class="videoLink elementLink videoImageLink" target="_blank" href="${videoURL}">
                 <img class="videoImage" src="${videoThumbnail}">
             </a>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/${videoID}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -421,43 +416,6 @@ fetch(youtubeRequest)
 //     //     `); // Had to do this in vanilla JS
 //     //     subNews.append(subNewsElement);
 //     // }
-// })
-
-// Youtube
-// var youtubeAPIKey = 'AIzaSyCHeOuNp6-T00l_ePO4-OTArWGMBqXkwjQ';
-// var youtubeRequestURL = `https://www.googleapis.com/youtube/v3/videos?id=7lCDEYXw3mM&key=${youtubeAPIKey}&part=snippet,contentDetails,statistics,status`;
-// var youtubeVideoURL = `https://www.youtube.com/watch?v=`;
-// var youtubeChannelURL = `https://www.youtube.com/c/`;
-// var youtubeListURL = `https://youtube.googleapis.com/youtube/v3/search?key=${youtubeAPIKey}`;
-
-// // Youtube List API
-// fetch(youtubeListURL)
-// .then(response => {
-//     return response.json();
-// }).then(data => {
-//     console.log('Youtube List API Data Is:');
-//     console.log(data);
-//     for (var i = 0; i < data.items.length; i++) {
-//         var youtube = $('.youtube');
-//         var videoID = data.items[i].id.videoId;
-//         var videoLink = youtubeVideoURL+data.items[i].id.videoId;
-//         console.log(videoLink);
-//         var videoElement = $(`
-//         <div class="videoElement element">
-//             <iframe src="https://www.youtube.com/embed/${videoID}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-//         </div>
-//         `);
-//         youtube.append(videoElement);
-//     }
-// })
-
-// // Youtube Video API
-// fetch(youtubeRequestURL)
-// .then(response => {
-//     return response.json();
-// }).then(data => {
-//     console.log('Youtube API Data Is:');
-//     console.log(data);
 // })
 
 // // Fetching Nasa Data
