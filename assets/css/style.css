@@ -53,6 +53,15 @@ body {
   margin-top: 5em;
 }
 
+#bm {
+  width: 15%;
+  position: absolute;
+  top: 3.5em;
+  left: 27%;
+  z-index: 0;
+  max-width: 13%;
+}
+
 h1 {
   font-family: 'montserrat';
 }
@@ -191,6 +200,50 @@ header h1 {
 h1 {
   font-size: 2.5em;
   font-weight: 600;
+}
+
+.vectorGraphic {
+  height: 310px;
+  width: 100%;
+  margin: 2em auto -6.5em;
+}
+
+.vectorGraphic text {
+  font-family: 'Montserrat';
+  font-size: 150px;
+  stroke: #0ed1c1;
+  fill: #000;
+  stroke-dasharray: 50% 0;
+  font-weight: 700;
+  stroke-width: 0px;
+  animation: textAnimate 5s ease-in-out;
+}
+
+@keyframes textAnimate {
+  0% {
+    fill: transparent;
+    stroke-width: 5px;
+    stroke-dasharray: 0 50%;
+    stroke-dashoffset: 20%;
+  }
+  35% {
+    fill: transparent;
+    stroke: #0ed1c1;
+    stroke-dasharray: 50% 0; 
+  }
+  75% {
+    fill: #0ed1c1;
+    stroke-dasharray: 0 50%;
+  }
+  99% {
+    stroke-width: 5px;
+  }
+  100% {
+    fill: #000;
+    stroke-dasharray: 0 50%;
+    stroke-width: 0px;
+    stroke-dashoffset: -20%;
+  }
 }
 
 .projectDescription {
@@ -827,9 +880,12 @@ footer {
 }
 
 /* category section styling */
-.categorySection {
+h1.categorySection {
   display: flex;
   justify-content: center;
+  color: transparent;
+  -webkit-text-stroke: black 1px;
+  animation: textAnimate 5s ease-in-out infinite alternate;
 }
 
 
@@ -848,6 +904,10 @@ footer {
 @media screen and (max-width: 1340px) {
   .firstBioRow, .secondBioRow {
     flex-direction: column !important;
+}
+.vectorGraphic {
+  height: 220px;
+  margin: 2em auto -4em;
 }
 }
 
@@ -879,6 +939,11 @@ footer {
 }
 
 @media screen and (max-width: 992px) {
+  .vectorGraphic {
+    height: 220px;
+    margin: 0em auto -5em;
+  }
+
   .desktopMenu {
     display: none;
   }
@@ -934,6 +999,10 @@ footer {
   .columnTitle {
     font-size: .8em;
   }
+  .vectorGraphic {
+    height: 220px;
+    margin: -3em auto -6em;
+  }
 }
 
 @media screen and (max-width: 676px) {
@@ -942,5 +1011,15 @@ footer {
   }
   .columnTitle {
     font-size: 1em;
+  }
+  .vectorGraphic {
+    height: 220px;
+    margin: -3em auto -6em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .navbar-start {
+    display: none;
   }
 }

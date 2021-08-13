@@ -1,6 +1,24 @@
 // Variables
 var newsColumns = $('.newsColumn');
 
+// var animation = bodymovin.loadAnimation({
+//     container: document.getElementById('bm'),
+//     renderer: 'svg',
+//     loop: true,
+//     autoplay: true,
+//     path: './assets/js/data.json'
+//   })
+
+var animation = bodymovin.loadAnimation({
+    container: document.getElementById('bm'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'https://labs.nearpod.com/bodymovin/demo/markus/isometric/markus2.json'
+  })
+
+  
+
 // R/news
 var redditKey = 'NWALDmX-ufQV53BKp0JLVw';
 var redditRSlashNews = 'https://www.reddit.com/r/news/.json?limit=24';
