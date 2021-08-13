@@ -100,14 +100,8 @@ fetch(nationalArchivesAPI)
             var archiveSubTitle = data.opaResponse.results.result[i].description.item.title;
             for (var key in data.opaResponse.results.result[i].objects.object.thumbnail) {
                 var keys = Object.keys(data.opaResponse.results.result[i].objects.object.thumbnail);
-                var urlKey = keys[2];
                 var thumbNailObject = data.opaResponse.results.result[i].objects.object.thumbnail;
-                var value = thumbNailObject;
-                console.log(url);
-                console.log(urlKey);
-                console.log(key);
-                console.log(keys);
-                console.log(value);
+                var value = thumbNailObject[key];
             }
             var { mime,path,archivePDFThumb } = data.opaResponse.results.result[i].objects.object.thumbnail;
             console.log(archivePDFThumb);
@@ -345,6 +339,49 @@ fetch(newsRequestURL)
          }
     }
 })
+
+// Youtube
+var youtubeKey = `AIzaSyA16vPDPSbXbys1NE6HlCCT-Myx4tgo0NU`;
+var youtubeRequest = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=US&key=${youtubeKey}`;
+
+// Fetching Youtube
+fetch(youtubeRequest)
+.then(response => {
+    return response.json();
+}).then(data => {
+    console.log(`Youtube API Data Is:`);
+    console.log(data);
+    let youtube = $('.youtube');
+    for (var i = 0; i < data.items.length; i++) {
+        let videoTitle = data.items[i].snippet.title;
+        let videoID = data.items[i].id;
+        let videoChannelName = data.items[i].snippet.channelTitle;
+        let videoThumbnail = data.items[i].snippet.thumbnails.maxres.url;
+        let videoURL = `https://www.youtube.com/watch?v=${videoID}&ab_channel=${videoChannelName}`;
+        var videoElement = $(`
+        <div class="videoElement element">
+            <div class="titleRow">
+                <div class="videoTitle elementTitle">
+                    <span class="index">${i+1 + '. '}</span>
+                    <a class="articleLink elementLink" target="_blank" href="${videoURL}">${videoTitle}</a>
+                </div>
+            </div>
+            <span class="byLine">By ${videoChannelName}</span>
+            <a class="videoLink elementLink" target="_blank" href="${videoURL}">
+                <img class="videoImage" src="${videoThumbnail}">
+            </a>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/${videoID}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        `);
+        var youtubeErrorCatch = youtube.find('#player');
+        console.log(youtubeErrorCatch);
+        // if (youtubeErrorCatch.html() === 'Video unavailable') {
+        //     youtube.find('iframe').hide();
+        // }
+        youtube.append(videoElement);
+    }
+})
+
 
 // Deprecated
 

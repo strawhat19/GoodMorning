@@ -601,7 +601,7 @@ button:hover {
 
 iframe {
   width: 100%;
-  min-height: 245px;
+  height: 100%;
   border-radius: 20px;
 }
 
