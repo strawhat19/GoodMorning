@@ -103,13 +103,12 @@ fetch(nationalArchivesAPI)
                 var thumbNailObject = data.opaResponse.results.result[i].objects.object.thumbnail;
                 var value = thumbNailObject[key];
             }
-            var { mime,path,archivePDFThumb } = data.opaResponse.results.result[i].objects.object.thumbnail;
-            console.log(archivePDFThumb);
-            var archivePDF = data.opaResponse.results.result[i].objects.object.file.url;
+            var archivePDF = data.opaResponse.results.result[i].objects.object.file['@url'];
+            console.log(archivePDF);
             var archive = {
                 title: archiveTitle,
                 subtitle: archiveSubTitle,
-                thumb: archivePDFThumb,
+                // thumb: archivePDFThumb,
                 pdf: archivePDF
             }
             descriptionArchives.push(archive);
@@ -342,7 +341,7 @@ fetch(newsRequestURL)
 
 // Youtube
 var youtubeKey = `AIzaSyA16vPDPSbXbys1NE6HlCCT-Myx4tgo0NU`;
-var youtubeRequest = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=US&key=${youtubeKey}`;
+var youtubeRequest = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=25&regionCode=US&key=${youtubeKey}`;
 
 // Fetching Youtube
 fetch(youtubeRequest)
@@ -356,8 +355,10 @@ fetch(youtubeRequest)
         let videoTitle = data.items[i].snippet.title;
         let videoID = data.items[i].id;
         let videoChannelName = data.items[i].snippet.channelTitle;
-        let videoThumbnail = data.items[i].snippet.thumbnails.maxres.url;
+        let videoChannelID = data.items[i].snippet.channelId;
+        let videoThumbnail = data.items[i].snippet.thumbnails.high.url;
         let videoURL = `https://www.youtube.com/watch?v=${videoID}&ab_channel=${videoChannelName}`;
+        let videoChannelURL = `https://www.youtube.com/channel/${videoChannelID}`;
         var videoElement = $(`
         <div class="videoElement element">
             <div class="titleRow">
@@ -366,18 +367,15 @@ fetch(youtubeRequest)
                     <a class="articleLink elementLink" target="_blank" href="${videoURL}">${videoTitle}</a>
                 </div>
             </div>
-            <span class="byLine">By ${videoChannelName}</span>
+            <span class="byLine">By 
+                <a class="articleLink elementLink" target="_blank" href="${videoChannelURL}">${videoChannelName}</a>
+            </span>
             <a class="videoLink elementLink" target="_blank" href="${videoURL}">
                 <img class="videoImage" src="${videoThumbnail}">
             </a>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/${videoID}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         `);
-        var youtubeErrorCatch = youtube.find('#player');
-        console.log(youtubeErrorCatch);
-        // if (youtubeErrorCatch.html() === 'Video unavailable') {
-        //     youtube.find('iframe').hide();
-        // }
         youtube.append(videoElement);
     }
 })
@@ -387,6 +385,7 @@ fetch(youtubeRequest)
 
 // ABC
 // var abcRequestURL = `https://api.abc.com/resources/.json?limit=24`;
+//    <iframe width="560" height="315" src="https://www.youtube.com/embed/${videoID}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 // // ABC News
 // fetch(abcRequestURL)
