@@ -1,101 +1,92 @@
 /* App CSS */
-.newsColumn {
-  background: var(--snow);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 1em;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  /* border: 1px solid black; */
-  text-align: center;
-  height: 30em;
-  width: 100%;
-}
 
+
+  .newsColumn {
+    background: var(--snow); 
+    display: flex;
+    padding: 1em;
+    align-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+    text-align: center;
+    height: 30em;
+    width: 100%;
+  }
 /* background image from https://www.gradientmagic.com/collection/darkbg*/
-.appContent {
-  background-image: linear-gradient(67.5deg, #060606 0%, #060606 6%, #1d1d1d 6%, #1d1d1d 57%, #343434 57%, #343434 58%, #4b4b4b 58%, #4b4b4b 79%, #616161 79%, #616161 93%, #787878 93%, #787878 95%, #8f8f8f 95%, #8f8f8f 100%), linear-gradient(90deg, #060606 0%, #060606 6%, #1d1d1d 6%, #1d1d1d 57%, #343434 57%, #343434 58%, #4b4b4b 58%, #4b4b4b 79%, #616161 79%, #616161 93%, #787878 93%, #787878 95%, #8f8f8f 95%, #8f8f8f 100%), linear-gradient(135deg, #060606 0%, #060606 6%, #1d1d1d 6%, #1d1d1d 57%, #343434 57%, #343434 58%, #4b4b4b 58%, #4b4b4b 79%, #616161 79%, #616161 93%, #787878 93%, #787878 95%, #8f8f8f 95%, #8f8f8f 100%), linear-gradient(0deg, #060606 0%, #060606 6%, #1d1d1d 6%, #1d1d1d 57%, #343434 57%, #343434 58%, #4b4b4b 58%, #4b4b4b 79%, #616161 79%, #616161 93%, #787878 93%, #787878 95%, #8f8f8f 95%, #8f8f8f 100%), linear-gradient(90deg, #080808, #dddddd);
-  background-blend-mode: overlay,overlay,overlay,overlay,normal;
-  padding: 2em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  grid-gap: 2em;
-  border: solid 1px #000;
-  /* background: var(--bisque);  */
-}
+  .appContent {
+    background-image: linear-gradient(67.5deg, rgb(6, 6, 6) 0%, rgb(6, 6, 6) 6%,rgb(29, 29, 29) 6%, rgb(29, 29, 29) 57%,rgb(52, 52, 52) 57%, rgb(52, 52, 52) 58%,rgb(75, 75, 75) 58%, rgb(75, 75, 75) 79%,rgb(97, 97, 97) 79%, rgb(97, 97, 97) 93%,rgb(120, 120, 120) 93%, rgb(120, 120, 120) 95%,rgb(143, 143, 143) 95%, rgb(143, 143, 143) 100%),linear-gradient(90deg, rgb(6, 6, 6) 0%, rgb(6, 6, 6) 6%,rgb(29, 29, 29) 6%, rgb(29, 29, 29) 57%,rgb(52, 52, 52) 57%, rgb(52, 52, 52) 58%,rgb(75, 75, 75) 58%, rgb(75, 75, 75) 79%,rgb(97, 97, 97) 79%, rgb(97, 97, 97) 93%,rgb(120, 120, 120) 93%, rgb(120, 120, 120) 95%,rgb(143, 143, 143) 95%, rgb(143, 143, 143) 100%),linear-gradient(135deg, rgb(6, 6, 6) 0%, rgb(6, 6, 6) 6%,rgb(29, 29, 29) 6%, rgb(29, 29, 29) 57%,rgb(52, 52, 52) 57%, rgb(52, 52, 52) 58%,rgb(75, 75, 75) 58%, rgb(75, 75, 75) 79%,rgb(97, 97, 97) 79%, rgb(97, 97, 97) 93%,rgb(120, 120, 120) 93%, rgb(120, 120, 120) 95%,rgb(143, 143, 143) 95%, rgb(143, 143, 143) 100%),linear-gradient(0deg, rgb(6, 6, 6) 0%, rgb(6, 6, 6) 6%,rgb(29, 29, 29) 6%, rgb(29, 29, 29) 57%,rgb(52, 52, 52) 57%, rgb(52, 52, 52) 58%,rgb(75, 75, 75) 58%, rgb(75, 75, 75) 79%,rgb(97, 97, 97) 79%, rgb(97, 97, 97) 93%,rgb(120, 120, 120) 93%, rgb(120, 120, 120) 95%,rgb(143, 143, 143) 95%, rgb(143, 143, 143) 100%),linear-gradient(90deg, rgb(8, 8, 8),rgb(221, 221, 221)); background-blend-mode:overlay,overlay,overlay,overlay,normal;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 2em;
+    border: solid 1px #000; 
+     /* background: var(--bisque);  */
+  }
 
-.categorySection {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
+  .categorySection {
+      display: flex;
+      justify-content: center;
+  }
 
-:root {
-  --richblack: #000500;
-  --bluencs: #0094C6;
-  --bluesapphire: #005E7C;
-  --bisque: #F1DABF;
-  --snow: #FFFBFF;
-  --redditDark: #1a1a1b;
-  --redditMain: #ff4500;
-  --cnnRed: #B80C09;
-  --cnnRichBlack: #0A0A0B;
-  --cnnGrey: #3D3D3D;
-  --abcBlack: #0A0A0B;
-  --abdWhite: #ffff;
-  --espnRed: #F41915;
-  --cspan: #003B7A;
-  --cbs: #4e4e4e;
-}
+  :root {
+    --richblack: #000500;
+    --bluencs: #0094C6;
+    --bluesapphire: #005E7C;
+    --bisque: #F1DABF;
+    --snow: #FFFBFF;
+  
+    --redditDark: #1a1a1b;
+    --redditMain: #ff4500;
 
-.cnn {
-  background: var(--cnnGrey);
-  color: #FFFBFF;
-}
+    --cnnRed: #B80C09;
+    --cnnRichBlack: #0A0A0B;
+    --cnnGrey: #3D3D3D;
 
-.abc {
-  background: var(--abcBlack);
-  color: var(--abdWhite);
-}
+    --abcBlack: #0A0A0B;
+    --abdWhite: #ffff;
 
-.espn {
-  background: var(--espnRed);
-}
+    --espnRed: #F41915;
 
-.cspan {
-  background: var(--cspan);
-  color: #FFFBFF;
-}
+    --cspan: #003B7A;
 
-.news {
-  background: var(--cspan);
-  color: white;
-}
+    --cbs: #4e4e4e;
+  }
 
-.cbs {
-  background: var(--cbs);
-}
+  .cnn{
+    background: var(--cnnGrey);
+    color: #FFFBFF;
+  }
 
-.youtube {
-  background: white;
-  color: var(--richblack);
-}
+  .abc{
+    background: var(--abcBlack);
+    color: var(--abdWhite);
+  }
 
-.youtube i {
-  color: #fff;
-  position: relative;
-  max-height: 1em;
-}
-/*# sourceMappingURL=app.css.map */
+  .espn{
+    background: var(--espnRed)
+  }
+
+  .cspan{
+    background: var(--cspan);
+    color:#FFFBFF;
+  }
+
+  .news{
+    background: var(--cspan);
+    color: white;
+  }
+
+  .cbs{
+    background: var(--cbs);
+  }
+
+  .youtube{
+    background: white;
+    color:var(--richblack);
+  }
+
+  .youtube i{
+    color: #fff;
+    position: relative;
+    max-height: 1em;
+  }

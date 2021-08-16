@@ -1,5 +1,22 @@
 // Variables
 var newsColumns = $('.newsColumn');
+// Draggable Feature
+var newsColumnTitles = $(`.columnTitle`);
+newsColumnTitles.on(`click`, function(){
+    newsColumns.addClass(`draggable`);
+    $(`.draggable`).draggable({
+    containment: `parent`,
+    cursor: `grabbing`,
+    opacity: 0.7,
+    grid: [300,100],
+    snap: true,
+    snapTolerance: 30
+    })
+    newsColumnTitles.on(`mouseleave`,function() {
+        console.log(`Mouse Left`);
+        newsColumns.removeClass(`draggable`);
+    })
+})
 
 // var animation = bodymovin.loadAnimation({
 //     container: document.getElementById('bm'),

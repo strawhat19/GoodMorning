@@ -9,8 +9,13 @@ var espn = document.querySelector('ESPN');
 var cspan = document.querySelector('CNBC');
 var news = document.querySelector('news');
 
-// Open and Close Mobile Menu
+// Fading In Main Body
+// More Animation Variables Below
+const body = $(`body`);
+body.attr(`style`,`display: none`);
+body.fadeIn(2000);
 
+// Open and Close Mobile Menu
 const openMenu = document.getElementById("openMenu");
 const closeMenu = document.getElementById("closeMenu");
 
