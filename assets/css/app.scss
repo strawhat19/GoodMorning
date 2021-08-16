@@ -1,0 +1,92 @@
+/* App CSS */
+
+
+  .newsColumn {
+    background: var(--snow); 
+    display: flex;
+    padding: 1em;
+    align-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+    text-align: center;
+    height: 30em;
+    width: 100%;
+  }
+/* background image from https://www.gradientmagic.com/collection/darkbg*/
+  .appContent {
+    background-image: linear-gradient(67.5deg, rgb(6, 6, 6) 0%, rgb(6, 6, 6) 6%,rgb(29, 29, 29) 6%, rgb(29, 29, 29) 57%,rgb(52, 52, 52) 57%, rgb(52, 52, 52) 58%,rgb(75, 75, 75) 58%, rgb(75, 75, 75) 79%,rgb(97, 97, 97) 79%, rgb(97, 97, 97) 93%,rgb(120, 120, 120) 93%, rgb(120, 120, 120) 95%,rgb(143, 143, 143) 95%, rgb(143, 143, 143) 100%),linear-gradient(90deg, rgb(6, 6, 6) 0%, rgb(6, 6, 6) 6%,rgb(29, 29, 29) 6%, rgb(29, 29, 29) 57%,rgb(52, 52, 52) 57%, rgb(52, 52, 52) 58%,rgb(75, 75, 75) 58%, rgb(75, 75, 75) 79%,rgb(97, 97, 97) 79%, rgb(97, 97, 97) 93%,rgb(120, 120, 120) 93%, rgb(120, 120, 120) 95%,rgb(143, 143, 143) 95%, rgb(143, 143, 143) 100%),linear-gradient(135deg, rgb(6, 6, 6) 0%, rgb(6, 6, 6) 6%,rgb(29, 29, 29) 6%, rgb(29, 29, 29) 57%,rgb(52, 52, 52) 57%, rgb(52, 52, 52) 58%,rgb(75, 75, 75) 58%, rgb(75, 75, 75) 79%,rgb(97, 97, 97) 79%, rgb(97, 97, 97) 93%,rgb(120, 120, 120) 93%, rgb(120, 120, 120) 95%,rgb(143, 143, 143) 95%, rgb(143, 143, 143) 100%),linear-gradient(0deg, rgb(6, 6, 6) 0%, rgb(6, 6, 6) 6%,rgb(29, 29, 29) 6%, rgb(29, 29, 29) 57%,rgb(52, 52, 52) 57%, rgb(52, 52, 52) 58%,rgb(75, 75, 75) 58%, rgb(75, 75, 75) 79%,rgb(97, 97, 97) 79%, rgb(97, 97, 97) 93%,rgb(120, 120, 120) 93%, rgb(120, 120, 120) 95%,rgb(143, 143, 143) 95%, rgb(143, 143, 143) 100%),linear-gradient(90deg, rgb(8, 8, 8),rgb(221, 221, 221)); background-blend-mode:overlay,overlay,overlay,overlay,normal;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 2em;
+    border: solid 1px #000; 
+     /* background: var(--bisque);  */
+  }
+
+  .categorySection {
+      display: flex;
+      justify-content: center;
+  }
+
+  :root {
+    --richblack: #000500;
+    --bluencs: #0094C6;
+    --bluesapphire: #005E7C;
+    --bisque: #F1DABF;
+    --snow: #FFFBFF;
+  
+    --redditDark: #1a1a1b;
+    --redditMain: #ff4500;
+
+    --cnnRed: #B80C09;
+    --cnnRichBlack: #0A0A0B;
+    --cnnGrey: #3D3D3D;
+
+    --abcBlack: #0A0A0B;
+    --abdWhite: #ffff;
+
+    --espnRed: #F41915;
+
+    --cspan: #003B7A;
+
+    --cbs: #4e4e4e;
+  }
+
+  .cnn{
+    background: var(--cnnGrey);
+    color: #FFFBFF;
+  }
+
+  .abc{
+    background: var(--abcBlack);
+    color: var(--abdWhite);
+  }
+
+  .espn{
+    background: var(--espnRed)
+  }
+
+  .cspan{
+    background: var(--cspan);
+    color:#FFFBFF;
+  }
+
+  .news{
+    background: var(--cspan);
+    color: white;
+  }
+
+  .cbs{
+    background: var(--cbs);
+  }
+
+  .youtube{
+    background: white;
+    color:var(--richblack);
+  }
+
+  .youtube i{
+    color: #fff;
+    position: relative;
+    max-height: 1em;
+  }
